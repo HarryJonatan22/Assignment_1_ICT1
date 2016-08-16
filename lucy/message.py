@@ -244,24 +244,56 @@ class Message(object):
 
                 # send a reply to the student for the chapter
 
-                Queries = ['who',
-                           'use',
-                           'student',
-                           'location',
-                           'attendance']
+                Greetings = ['hello',
+                             'hi',
+                             'morning',
+                             'goodbye',
+                             'bye',
+                             'you?',
+                             'what',
+                             'thank',
+                             'old',
+                             'who',
+                             'guess',
+                             'or',
+                             'free',
+                             'hey',
+                             'day',
+                             'see',
+                             'merry']
 
-                Answer = ['My name is Lucy, I am an Intelligent Agent.' ,
-                          'You can ask me any queries about James Cook University and I will try my best to help you to answer your queries.',
-                          'You can call one of the staff member: \nName: Filomeno Bajar Jaypee \nContacts: +62 6709 3656 \nEmail: filomeno.bajar@jcu.edu.au \nOr \nYou can go to student service in the student hub \n (https://www.jcu.edu.sg/dev/campus-map?8)',
-                          'Thanks',
-                          'You can try to contact one of the attendace support team \nName: Mr.Surein Selvan \nContact: +62 6709 3672 \nEmail: surein.selvan@jcu.edu.au \nOr \nYou can go to their office near the cafeteria \n https://www.jcu.edu.sg/dev/campus-map?3 ',
-                          ]
+                Answer_Greetings = ['Hello. How can I help you ?',
+                                    'Hi. How can I help you ?',
+                                    'Good Morning',
+                                    'Goodbye',
+                                    'Bye Bye',
+                                    'I am fine',
+                                    'Nothing much',
+                                    'You are welcome',
+                                    'Age is my secret',
+                                    'I am Lucy',
+                                    'What is it',
+                                    'I am a bot',
+                                    'Nope find me again next time',
+                                    'Hey',
+                                    'I am doing well',
+                                    'Nice to see you too',
+                                    'Merry Christmas to you too']
+
+
+                Queries = ['use',
+                           ]
+
+                Answer = ['You can ask me any queries about James Cook University and I will try my best to help you to answer your queries.',
+                          '']
 
                 word = content.lower()
                 words = word.split()
 
                 for sentences in words:
-                    if sentences in Queries[3]:
+                    if sentences in Greetings :
+                       content = Answer_Greetings[Greetings.index(sentences)]
+                    elif sentences in Queries[3]:
                         url = "https://www.google.com.sg/maps/place/JCU+Singapore/@1.3161537,103.8740857,17z/data=!3m1!4b1!4m5!3m4!1s0x31da16cef632bddb:0xef7745ab4d94a5f!8m2!3d1.3161537!4d103.8762744"
                         webbrowser.open_new(url)
                         content = Answer[Queries.index(sentences)]
