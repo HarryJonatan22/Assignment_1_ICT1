@@ -9,6 +9,8 @@ import urllib
 import urllib2
 import json
 import time
+import webbrowser
+
 
 # Class for accessing KOPO MES server for retrieving and sending messages for a chapter of a journey
 class Message(object):
@@ -241,6 +243,34 @@ class Message(object):
                 content = messageComposer(msg, fdata)  # we should use some machine learning tools to compose a reply message
 
                 # send a reply to the student for the chapter
+
+                Queries = ['who',
+                           'use',
+                           'student',
+                           'location',
+                           'attendance']
+
+                Answer = ['My name is Lucy, I am an Intelligent Agent.' ,
+                          'You can ask me any queries about James Cook University and I will try my best to help you to answer your queries.',
+                          'You can call one of the staff member: \nName: Filomeno Bajar Jaypee \nContacts: +62 6709 3656 \nEmail: filomeno.bajar@jcu.edu.au \nOr \nYou can go to student service in the student hub \n (https://www.jcu.edu.sg/dev/campus-map?8)',
+                          'Thanks',
+                          'You can try to contact one of the attendace support team \nName: Mr.Surein Selvan \nContact: +62 6709 3672 \nEmail: surein.selvan@jcu.edu.au \nOr \nYou can go to their office near the cafeteria \n https://www.jcu.edu.sg/dev/campus-map?3 ',
+                          ]
+
+                word = content.lower()
+                words = word.split()
+
+                for sentences in words:
+                    if sentences in Queries[3]:
+                        chrome_path = 'open -a /Applications/Google\ Chrome.app %s'
+                        #chrome_path = 'C:\Program Files (x86)\Google\Chrome\Application\chrome.exe %s'
+
+                        url = "https://www.google.com.sg/maps/place/JCU+Singapore/@1.3161537,103.8740857,17z/data=!3m1!4b1!4m5!3m4!1s0x31da16cef632bddb:0xef7745ab4d94a5f!8m2!3d1.3161537!4d103.8762744"
+                        webbrowser.get(chrome_path).open_new(url)
+                        content = Answer[Queries.index(sentences)]
+                    elif sentences in Queries:
+                        content = Answer[Queries.index(sentences)]
+
                 print 'Sending message to ', receiver_id, sendername
                 r = self.sendMessage(receiver_id, content)
                 if r['err'] > 0:

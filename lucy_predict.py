@@ -33,9 +33,9 @@ How to use this code:
 """
 #================================================
 # Global variables that you need to change
-username = "change this"  # change this to your username
-passwd = "change this"    # change this to your passwd
-chapter_id = 49           # change this to your chapter ID. It is INT type.
+username = "shadows22"  # change this to your username
+passwd = "shadows22"    # change this to your passwd
+chapter_id = 247           # change this to your chapter ID. It is INT type.
 pathToDataFolder = "c:/dataFolder"  # change this to the folder where you want to place downloaded files for processing
 
 #================================================
