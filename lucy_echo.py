@@ -60,7 +60,7 @@ def makeReply(msg, fdata=None):
     """
     # do something amazing to generate the content for msg
 
-    content = "Echo test: " + msg['content']  # need to do more than this...
+    content = msg['content']  # need to do more than this...
     return content
 
 def buildDatabase(messages):
