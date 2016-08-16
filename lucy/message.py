@@ -262,11 +262,8 @@ class Message(object):
 
                 for sentences in words:
                     if sentences in Queries[3]:
-                        chrome_path = 'open -a /Applications/Google\ Chrome.app %s'
-                        #chrome_path = 'C:\Program Files (x86)\Google\Chrome\Application\chrome.exe %s'
-
                         url = "https://www.google.com.sg/maps/place/JCU+Singapore/@1.3161537,103.8740857,17z/data=!3m1!4b1!4m5!3m4!1s0x31da16cef632bddb:0xef7745ab4d94a5f!8m2!3d1.3161537!4d103.8762744"
-                        webbrowser.get(chrome_path).open_new(url)
+                        webbrowser.open_new(url)
                         content = Answer[Queries.index(sentences)]
                     elif sentences in Queries:
                         content = Answer[Queries.index(sentences)]
