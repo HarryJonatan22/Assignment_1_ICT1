@@ -250,7 +250,7 @@ class Message(object):
                              'goodbye',
                              'bye',
                              'you?',
-                             'what',
+                             'up',
                              'thank',
                              'old',
                              'who',
@@ -282,10 +282,42 @@ class Message(object):
 
 
                 Queries = ['use',
-                           ]
+                           'watch',
+                           'see',
+                           'location',
+                           'avenue',
+                           'start',
+                           'opening',
+                           'end',
+                           'closing',
+                           'what',
+                           'details',
+                           'news',
+                           'contacts',
+                           'developer',
+                           'other',
+                           'others',
+                           'venue',
+                           'venues']
 
                 Answer = ['You can ask me any queries about James Cook University and I will try my best to help you to answer your queries.',
-                          '']
+                          'You can watch Olympic games on the internet or on your television.',
+                          'You can watch Olympic games on the internet or on your television.',
+                          'That is the avenue',
+                          'That is the avenue',
+                          'Olympic start at Friday, August 5 2016',
+                          'Olympic start at Friday, August 5 2016',
+                          'The closing ceremony will start at Sunday, August 21 2016 at 7p.m ET',
+                          'The closing ceremony will start at Sunday, August 21 2016 at 7p.m ET',
+                          'Leading international sporting events featuring summer and winter sports competitions in which thousands of athletes from around the world participate in a variety of competitions.'
+                          'That is the details',
+                          'That is the details',
+                          'You can contact my developers in this number +65 92950403 or email BIT_ICT1_Lucy_Kevin_Harry_Khai_Jay@gmail.com',
+                          'You can contact my developers in this number +65 92950403 or email BIT_ICT1_Lucy_Kevin_Harry_Khai_Jay@gmail.com',
+                          'That is the venues for others sports',
+                          'That is the venues for others sports',
+                          'That is the venues for others sports',
+                          'That is the venues for others sports']
 
                 word = content.lower()
                 words = word.split()
@@ -293,8 +325,16 @@ class Message(object):
                 for sentences in words:
                     if sentences in Greetings :
                        content = Answer_Greetings[Greetings.index(sentences)]
-                    elif sentences in Queries[3]:
-                        url = "https://www.google.com.sg/maps/place/JCU+Singapore/@1.3161537,103.8740857,17z/data=!3m1!4b1!4m5!3m4!1s0x31da16cef632bddb:0xef7745ab4d94a5f!8m2!3d1.3161537!4d103.8762744"
+                    elif sentences in Queries[3] or Queries[4]:
+                        url = "https://www.google.com/maps/place/Maracan%C3%A3,+Rio+de+Janeiro+-+State+of+Rio+de+Janeiro,+Brazil/@-22.9139068,-43.2315809,16z/data=!3m1!4b1!4m5!3m4!1s0x997e5bfcef45a7:0x3c044ac8f75ca717!8m2!3d-22.9127036!4d-43.2261662"
+                        webbrowser.open_new(url)
+                        content = Answer[Queries.index(sentences)]
+                    elif sentences in Queries[10] or Queries[11]:
+                        url = "https://www.olympic.org/"
+                        webbrowser.open_new(url)
+                        content = Answer[Queries.index(sentences)]
+                    elif sentences in Queries[14] or Queries[15] or Queries[16] or Queries[17]:
+                        url = "https://www.rio2016.com/en/venues"
                         webbrowser.open_new(url)
                         content = Answer[Queries.index(sentences)]
                     elif sentences in Queries:
