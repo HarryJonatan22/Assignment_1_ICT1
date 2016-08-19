@@ -262,7 +262,7 @@ class Message(object):
                              'see',
                              'merry']
 
-                Answer_Greetings = ['Hello. How can I help you ?',
+                Answer_Greetings = ['<font color="red">Hello. How can I help you ?</font>',
                                     'Hi. How can I help you ?',
                                     'Good Morning',
                                     'Goodbye',
