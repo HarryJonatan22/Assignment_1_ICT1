@@ -326,17 +326,14 @@ class Message(object):
                     if sentences in Greetings :
                        content = Answer_Greetings[Greetings.index(sentences)]
                     elif sentences in Queries[3] or Queries[4]:
-                        url = "https://www.google.com/maps/place/Maracan%C3%A3,+Rio+de+Janeiro+-+State+of+Rio+de+Janeiro,+Brazil/@-22.9139068,-43.2315809,16z/data=!3m1!4b1!4m5!3m4!1s0x997e5bfcef45a7:0x3c044ac8f75ca717!8m2!3d-22.9127036!4d-43.2261662"
-                        webbrowser.open_new(url)
-                        content = Answer[Queries.index(sentences)]
+                        url = '<a href="https://www.google.com/maps/place/Maracan%C3%A3,+Rio+de+Janeiro+-+State+of+Rio+de+Janeiro,+Brazil/@-22.9139068,-43.2315809,16z/data=!3m1!4b1!4m5!3m4!1s0x997e5bfcef45a7:0x3c044ac8f75ca717!8m2!3d-22.9127036!4d-43.2261662" target="_blank">Click here for the location</a>'
+                        content = url
                     elif sentences in Queries[10] or Queries[11]:
-                        url = "https://www.olympic.org/"
-                        webbrowser.open_new(url)
-                        content = Answer[Queries.index(sentences)]
+                        url = '<a href="https://www.olympic.org/" target="_blank">Click here for the olympics details</a>'
+                        content = url
                     elif sentences in Queries[14] or Queries[15] or Queries[16] or Queries[17]:
-                        url = "https://www.rio2016.com/en/venues"
-                        webbrowser.open_new(url)
-                        content = Answer[Queries.index(sentences)]
+                        url = '<a href="https://www.rio2016.com/en/venues" target="_blank">Click here for the others sports</a>'
+                        content = url
                     elif sentences in Queries:
                         content = Answer[Queries.index(sentences)]
 
