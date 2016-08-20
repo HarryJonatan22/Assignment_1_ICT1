@@ -35,7 +35,7 @@ How to use this code:
 # Global variables that you need to change
 username = "shadows22"  # change this to your username
 passwd = "Shadows22"    # change this to your passwd
-chapter_id = 247          # change this to your chapter ID. It is INT type.
+chapter_id = 301          # change this to your chapter ID. It is INT type.
 pathToDataFolder = "c:/dataFolder"  # change this to the folder where you want to place downloaded files for processing
 
 #================================================
