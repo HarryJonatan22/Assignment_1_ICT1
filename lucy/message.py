@@ -244,7 +244,7 @@ class Message(object):
 
                 # send a reply to the student for the chapter
 
-                Greetings = ['hello',
+                Keywords_Greetings = ['hello',
                              'hi',
                              'morning',
                              'goodbye',
@@ -323,8 +323,8 @@ class Message(object):
                 words = word.split()
 
                 for sentences in words:
-                    if sentences in Greetings :
-                       content = Answer_Greetings[Greetings.index(sentences)]
+                    if sentences in Keywords_Greetings :
+                       content = Answer_Greetings[Keywords_Greetings.index(sentences)]
                     elif sentences in Queries[3] or Queries[4]:
                         url = '<a href="https://www.google.com/maps/place/Maracan%C3%A3,+Rio+de+Janeiro+-+State+of+Rio+de+Janeiro,+Brazil/@-22.9139068,-43.2315809,16z/data=!3m1!4b1!4m5!3m4!1s0x997e5bfcef45a7:0x3c044ac8f75ca717!8m2!3d-22.9127036!4d-43.2261662" target="_blank">Click here for the location</a>'
                         content = url
